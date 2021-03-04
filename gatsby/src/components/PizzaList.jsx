@@ -1,5 +1,6 @@
 import {Link} from 'gatsby';
 import React from 'react';
+import Img from 'gatsby-image';
 
 function SinglePizza({pizzas}) {
   return (
@@ -9,6 +10,7 @@ function SinglePizza({pizzas}) {
           <span className="mark">{pizzas.name}</span>
         </h2>
         <p>{pizzas.toppings.map(topping => topping.name).join(', ')}</p>
+        <Img fluid={pizzas.image.asset.fluid} alt={pizzas.name} />
       </Link>
     </div>
   );
